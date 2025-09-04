@@ -72,7 +72,11 @@ const RootContainer: React.FC = () => {
           ref={inputRef}
         />
 
-        <button className="btn btn-success ms-2" type="submit">
+        <button
+          className="btn btn-success ms-2"
+          type="submit"
+          disabled={loading}
+        >
           Add
         </button>
       </form>
