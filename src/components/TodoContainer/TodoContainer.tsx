@@ -57,7 +57,7 @@ const RootContainer: React.FC = () => {
     [setTodos]
   )
 
-  if (error) return <code>Error: {JSON.stringify(error)}</code>
+  if (error) return <code>{JSON.stringify(error)}</code>
 
   return (
     <div className="d-flex flex-column">
