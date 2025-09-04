@@ -1,3 +1,12 @@
+# Result 
+
+Deployed to Vercel: [inboxdesign-exercise.vercel.app](inboxdesign-exercise.vercel.app)
+
+https://github.com/user-attachments/assets/6296cc45-226f-4e0e-ba9e-6333bdecd926
+
+
+
+
 # InboxDesign Exercise Project
 
 Please create the following features using TypeScript.
