@@ -66,7 +66,7 @@ const RootContainer: React.FC = () => {
           autoFocus
           type="text"
           className="form-control"
-          placeholder="Add a new todo..."
+          placeholder="Type here to add..."
           id="addTodoInput"
           required
           ref={inputRef}

@@ -19,7 +19,6 @@ const TodoItem: React.FC<ITodoItemProps> = ({
           type="checkbox"
           checked={todo.completed}
           onChange={() => handleCompleteTodo(todo.id)}
-          placeholder="Type here to add..."
         />
         <span className={`w-100 ${todo.completed ? "completed" : ""}`}>
           {todo.todo}
