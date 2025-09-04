@@ -1,15 +1,12 @@
-import './App.css'
+import "./App.css"
+import TodoContainer from "./components/TodoContainer"
 
 function App() {
-
   return (
-    <div className="my-4">
+    <div className="my-4 d-flex flex-column gap-4">
       <h3>Todo List</h3>
 
-      <div>
-        <code>Create a todo list here.</code>
-      </div>
-
+      <TodoContainer />
     </div>
   )
 }
