@@ -3,6 +3,7 @@ export type TTodoItem = {
   todo: string
   completed: boolean
   userId: number
+  isLocal?: boolean
 }
 
 export type TTodoList = TTodoItem[]

@@ -2,9 +2,6 @@
 
 Deployed to Vercel: [inboxdesign-exercise.vercel.app](inboxdesign-exercise.vercel.app)
 
-https://github.com/user-attachments/assets/6296cc45-226f-4e0e-ba9e-6333bdecd926
-
-
 
 
 # InboxDesign Exercise Project
@@ -45,7 +42,7 @@ Please create the following features using TypeScript.
 
 
 
-## How to start? 
+## How to start?
 
 1. Go to [https://github.com/InboxDesignNZ/inboxdesign-exercise-react-ts](https://github.com/InboxDesignNZ/inboxdesign-exercise-react-ts). Create a new repository in your Github account.
 
