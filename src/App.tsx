@@ -1,13 +1,18 @@
 import "./App.css"
 import TodoContainer from "./components/TodoContainer"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <div className="my-4 d-flex flex-column gap-4">
-      <h3>Todo List</h3>
+    <QueryClientProvider client={queryClient}>
+      <div className="my-4 flex flex-col gap-4">
+        <h3>Todo List</h3>
 
-      <TodoContainer />
-    </div>
+        <TodoContainer />
+      </div>
+    </QueryClientProvider>
   )
 }
 
