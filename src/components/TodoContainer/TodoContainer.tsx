@@ -49,7 +49,7 @@ const TodoContainer: React.FC = () => {
         />
 
         <button
-          className="btn btn-success w-20!"
+          className="btn btn-success w-20"
           type="submit"
           disabled={addLoading}
         >

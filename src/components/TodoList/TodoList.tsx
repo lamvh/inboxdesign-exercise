@@ -73,7 +73,7 @@ const TodoList: React.FC<ITodoListProps> = ({ todos, setTodos }) => {
           </div>
           <div className="items-end flex justify-end">
             <button
-              className="btn btn-danger w-20!"
+              className="btn btn-danger w-20"
               onClick={() => handleDeleteTodo(todo)}
             >
               Delete
