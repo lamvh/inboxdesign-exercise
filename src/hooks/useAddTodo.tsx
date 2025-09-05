@@ -22,7 +22,9 @@ const useAddTodo = ({
     },
     onSuccess: (data) => {
       setTodos((prev) =>
-        [...prev, data].sort(
+        // for demo purpose, we add 'isLocal' property to identify
+        // new todo from API does not have 'isLocal' property and id has different with 255 (always returned id:255 from api)
+        [...prev, { ...data, isLocal: true, id: Math.random() }].sort(
           (a, b) => Number(a.completed) - Number(b.completed)
         )
       )

@@ -14,15 +14,34 @@ const TodoList: React.FC<ITodoListProps> = ({ todos, setTodos }) => {
     setTodos,
   })
 
-  const handleCompleteTodo = (id: number) => {
-    updateTodoStatus({
-      id,
-      completed: todos.find((t) => t.id === id)?.completed || false,
-    })
+  const handleCompleteTodo = (todo: TTodoItem) => {
+    // Just for demo purpose
+    // If isLocal is true, it means this todo is created locally (not from API)
+    // So we just update it in the local state without calling the API
+    if (todo.isLocal) {
+      setTodos((prev) => {
+        const updated = prev.map((t) =>
+          t.id === todo.id ? { ...t, completed: !t.completed } : t
+        )
+        return updated.sort((a, b) => Number(a.completed) - Number(b.completed))
+      })
+    } else {
+      updateTodoStatus({
+        id: todo.id,
+        completed: todos.find((t) => t.id === todo.id)?.completed || false,
+      })
+    }
   }
 
-  const handleDeleteTodo = (id: number) => {
-    deleteTodo(id)
+  const handleDeleteTodo = (todo: TTodoItem) => {
+    // Just for demo purpose
+    // If isLocal is true, it means this todo is created locally (not from API)
+    // So we just remove it from the local state without calling the API
+    if (todo?.isLocal) {
+      setTodos((prev) => prev.filter((t) => t.id !== todo.id))
+    } else {
+      deleteTodo(todo.id)
+    }
   }
 
   if (todos.length === 0) {
@@ -45,7 +64,7 @@ const TodoList: React.FC<ITodoListProps> = ({ todos, setTodos }) => {
               <input
                 type="checkbox"
                 checked={todo.completed}
-                onChange={() => handleCompleteTodo(todo.id)}
+                onChange={() => handleCompleteTodo(todo)}
               />
               <span className={`${todo.completed ? "line-through" : ""}`}>
                 {todo.todo}
@@ -55,7 +74,7 @@ const TodoList: React.FC<ITodoListProps> = ({ todos, setTodos }) => {
           <div className="items-end flex justify-end">
             <button
               className="btn btn-danger w-20!"
-              onClick={() => handleDeleteTodo(todo.id)}
+              onClick={() => handleDeleteTodo(todo)}
             >
               Delete
             </button>
